@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /wings/
+#
+#RewriteCond %{REQUEST_URI} ^system.*
+#RewriteRule ^(.*)$ /index.php?/$1 [L]
+#
+#RewriteCond %{REQUEST_URI} ^application.*
+#RewriteRule ^(.*)$ /index.php?/$1 [L]
+#
+##RewriteCond %{REQUEST_FILENAME} !-f
+##RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond $1 !^(index\.php|img|style|js|fonts|robots\.txt|favicon\.ico)
+#RewriteRule ^(.*)$ /wings/index.php?/$1 [L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
